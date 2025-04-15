@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="src/style.css">
+  <title>Calculator</title>
+</head>
+
+<body class="min-h-dvh bg-gradient-to-t from-[#9CECFB] via-[#65C7F7] to-[#0052D4] flex flex-col select-none">
+  <header>
+    <h1 class="text-center text-3xl mt-4 text-white font-serif mb-10">Calculator</h1>
+  </header>
+
+  <main class="grow flex flex-col items-center">
+    <div class="calc-container-main w-auto flex h-auto flex-col mt-10">
+      <div class="bg-amber-50 h-10 mb-0.5  rounded-t-xl" id="calc-output" aria-autocomplete="none"></div>
+      <input type="text" dir="rtl" class="bg-amber-50 p-5 text-2xl h-14 mb-0.5 active::border-0 selection:border-amber-200" id="calc-input">
+
+      <div class="calc-key-container flex flex-col w-full p-3 min-h-9/12 h-max rounded-b-xl bg-gradient-to-l shadow-2xl shadow-grey from-[#FC5C7D] to-[#6A82FB]">
+        <div class="top-row flex [&>button]:w-13 [&>button]:h-13  [&>button]:rounded-4xl [&>button]:m-2">
+          <button class="bg-red-500">AC</button>
+          <button class="bg-green-500">❎</button>
+          <button class="bg-pink-300">^</button>
+          <button class="bg-orange-600">=</button>
+        </div>
+
+        <div class="flex">
+          <div
+            class="calc-numberic [&_button]:bg-blue-300  [&_button]:w-13 [&_button]:h-13 [&_button]:rounded-4xl [&_button]:m-2">
+            <div class="num-row-1 ">
+              <button>7</button>
+              <button>8</button>
+              <button>9</button>
+            </div>
+            <div class="num-row-2">
+              <button>4</button>
+              <button>5</button>
+              <button>6</button>
+            </div>
+            <div class="num-row-3">
+              <button>1</button>
+              <button>2</button>
+              <button>3</button>
+            </div>
+            <div class="num-row-4">
+              <button>00</button>
+              <button>0</button>
+              <button>.</button>
+            </div>
+          </div>
+
+          <div class="side-row flex flex-col [&>button]:w-13 [&>button]:h-13 [&>button]:m-2 [&>button]:rounded-4xl ">
+            <button class="bg-amber-300">*</button>
+            <button class="bg-amber-300">-</button>
+            <button class="bg-amber-300">+</button>
+            <button class="bg-amber-300">/</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+  </main>
+  <footer>
+    <div class="bg-green-500 text-center w-full">Footer</div>
+  </footer>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
