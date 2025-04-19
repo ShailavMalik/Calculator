@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" href="/calculator_icon.ico">
+  <link rel="icon" href="/Img/calculator_icon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="src/style.css">
   <title>Calculator | @SM</title>
@@ -13,29 +13,32 @@
   <header>
     <a href="https://github.com/ShailavMalik/Calculator" target="_blank">
       <h1
-        class=" text-center text-shadow-2xs text-shadow-purple-200 text-4xl absolute top-0   left-1/2 translate-x-[-50%]  bg--600 mt-4 text-white font-serif mb-10 hover:rotate-2 hover:transition-transform hover:duration-500 hover:ease-in-out active:opacity-70 drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]">
-        Calculator</h1>
+        class=" text-center text-shadow-2xs text-shadow-purple-200 text-4xl  bg--600 mt-4 text-white font-serif mb-10 hover:rotate-2 hover:transition-transform hover:duration-500 hover:ease-in-out active:opacity-70 drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]">
+        Calculator
+      </h1>
     </a>
   </header>
 
-  <main class="grow flex flex-col items-center justify-center">
+  <main class="grow flex flex-col items-center">
     <div
-      class="calc-container-main w-auto flex h-auto flex-col mt-10 shadow-[10px_15px_50px_#ccb3ff] ring ring-purple-400 rounded-xl  [&_button]:active:scale-105">
+      class="calc-container-main w-min flex h-min -translate-y-2 flex-col mt-10 shadow-[10px_15px_50px_#ccb3ff] ring ring-purple-400 rounded-xl  [&_button]:active:scale-125">
       <!-- * calc-output -->
       <div class="bg-amber-50 h-13 mb-[1px] text-2xl rounded-t-xl text-right p-3 relative" id="calc-output-box">
         <div class="ans_div absolute text-sm light font-light top-0 hidden" id="ans_div">Ans</div>
         <div class="h-full" id="calc-output"></div>
       </div>
-      <input type="text" class="bg-amber-50  mb-[0.5px] p-5 text-2xl h-14  caret-transparent text-right focus:outline-0"
+      <input type="text" disabled
+        class="bg-amber-50  mb-[0.5px] p-5 text-2xl h-14  caret-transparent text-right focus:outline-0"
         autocomplete="off" id="calc-input">
       <!-- * calc-input -->
 
       <div
         class="calc-key-container flex flex-col w-full p-3 min-h-9/12 h-max rounded-b-xl bg-gradient-to-br from-rose-400 via-fuchsia-500 to-indigo-500">
+        <audio src="/sound/button_click.wav" id="button_sound"></audio>
         <div class="top-row flex   [&>button]:rounded-4xl [&>button]:m-2">
-          <button class="w-13 h-13 bg-red-500" id="clear">AC</button>
-          <button class="w-14 h-14" id="back"><img class="" src="/arrow-64.png" alt=""></button>
-          <button class="w-13 h-13 op_btn bg-pink-300" value="^">^</button>
+          <button class="w-13 h-13 active  bg-red-500" id="clear">AC</button>
+          <button class="w-14 h-14" id="back"><img class="" src="Img/arrow-64.png" alt=""></button>
+          <button class="w-13 h-13 op_btn bg-pink-300" id="exp" value="^">^</button>
           <button class="w-13 h-13 bg-orange-600" id="equalto">=</button>
         </div>
 
@@ -65,10 +68,10 @@
           </div>
 
           <div class="side-row flex flex-col [&>button]:w-13 [&>button]:h-13 [&>button]:m-2 [&>button]:rounded-4xl ">
-            <button class="op_btn bg-amber-300" value="*">*</button>
-            <button class="op_btn bg-amber-300" value="-">-</button>
-            <button class="op_btn bg-amber-300" value="+">+</button>
-            <button class="op_btn bg-amber-300" value="/">/</button>
+            <button class="op_btn bg-amber-300" id="mul" value="*">*</button>
+            <button class="op_btn bg-amber-300" id="sub" value="-">-</button>
+            <button class="op_btn bg-amber-300" id="add" value="+">+</button>
+            <button class="op_btn bg-amber-300" id="div" value="/">/</button>
           </div>
         </div>
 
@@ -80,7 +83,8 @@
 
 
   <footer class="bg-gradient-to-r from-purple-800 via-pink-600 to-blue-700 to-green text-center p-1  text-white">
-    <div>© <a class="hover:animate-pulse active:underline" href="https://shailav-portfolio.vercel.app/" target="_blank">
+    <div class="text-sm">© <a class="hover:animate-pulse active:underline" href="https://shailav-portfolio.vercel.app/"
+        target="_blank">
         Shailav Malik</a> 2025, All Rights Reserved</div>
   </footer>
 
