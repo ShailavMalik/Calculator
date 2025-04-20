@@ -98,7 +98,7 @@ function evaluatePostfix(exp) {
         let op2 = stack.pop();
         const opFunc = operators[ch];
         if (opFunc) {
-          let result = opFunc(op2, op1);
+          let result = opFunc(+op2, +op1);
           stack.push(result);
         } else {
           throw new Error("Unsupported operator: " + ch);

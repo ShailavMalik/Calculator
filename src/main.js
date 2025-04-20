@@ -22,7 +22,6 @@ function highlightNumButton(key) {
     if (button.value == key) {
       button.click();
       button.preventDefault();
-
     }
   });
 }
@@ -34,6 +33,7 @@ function highlightOpButton(key) {
   else if (key == "+") document.getElementById("add").click();
   else if (key == "-") document.getElementById("sub").click();
   else if (key == "^") document.getElementById("exp").click();
+
 }
 
 document.addEventListener("keydown", (e) => {
