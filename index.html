@@ -28,12 +28,12 @@
         <div class="h-full" id="calc-output"></div>
       </div>
       <input type="text" disabled
-        class="bg-amber-50  mb-[0.5px] p-5 text-2xl h-14  caret-transparent text-right focus:outline-0"
+        class="bg-amber-50  mb-[0.5px] w-full p-5 text-2xl h-14  caret-transparent text-right focus:outline-0"
         autocomplete="off" id="calc-input">
       <!-- * calc-input -->
 
       <div
-        class="calc-key-container flex flex-col w-auto pt-3 pb-3 h-max items-center rounded-b-xl bg-gradient-to-br from-rose-400 via-fuchsia-500 to-indigo-500">
+        class="calc-key-container flex flex-col w-max pr-2 pl-2 pt-3 pb-3 h-max items-center rounded-b-xl bg-gradient-to-br from-rose-400 via-fuchsia-500 to-indigo-500">
         <audio src="/sound/button_click.wav" id="button_sound"></audio>
         <div class="top-row flex   [&>button]:rounded-4xl [&>button]:m-2">
           <button class="w-13 h-13 active  bg-red-500" id="clear">AC</button>
