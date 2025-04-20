@@ -21,6 +21,8 @@ function highlightNumButton(key) {
   numbericButtons.forEach((button) => {
     if (button.value == key) {
       button.click();
+      button.preventDefault();
+
     }
   });
 }
