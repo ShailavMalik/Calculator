@@ -16,7 +16,7 @@ let output = 0;
 let displayInput = "";
 let clearFlag = false;
 
-// highlight numeric key on screen when key is pressed on keyboard
+// highlight numeric keys on screen when key is pressed on keyboard
 function highlightNumButton(key) {
   numbericButtons.forEach((button) => {
     if (button.value == key) {
@@ -25,6 +25,7 @@ function highlightNumButton(key) {
   });
 }
 
+// highlight Operation keys on screen when key is pressed on keyboard
 function highlightOpButton(key) {
   if (key == "*") document.getElementById("mul").click();
   else if (key == "/") document.getElementById("div").click();
@@ -40,8 +41,7 @@ document.addEventListener("keydown", (e) => {
     highlightNumButton(key); // simulate key press on screen for numberic keys
   else if (key == "Enter") document.getElementById("equalto").click();
   else if (key == "Backspace") document.getElementById("clear").click();
-  else
-  highlightOpButton(key);
+  else highlightOpButton(key);
 });
 
 calcInput.addEventListener("input", (e) => {
@@ -59,12 +59,16 @@ equalto.addEventListener("click", () => {
   output = calculateExpression(displayInput);
   calcOutput.textContent = output; // here show answer
   ans_div.classList.remove("hidden");
+  sound.currentTime = 0; //rewind to start
+  sound.play();
   clearFlag = true;
 });
 
 back.addEventListener("click", () => {
   displayInput = displayInput.slice(0, -1);
   calcInput.value = displayInput;
+  sound.currentTime = 0; //rewind to start
+  sound.play();
 });
 
 clear.addEventListener("click", (e) => {
@@ -73,6 +77,8 @@ clear.addEventListener("click", (e) => {
   calcInput.value = displayInput; // update the dom
   output = 0;
   calcOutput.innerText = output;
+  sound.currentTime = 0; //rewind to start
+  sound.play();
 });
 
 numbericButtons.forEach((button) => {
