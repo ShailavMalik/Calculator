@@ -6,7 +6,7 @@ A responsive and minimal calculator that evaluates expressions using **postfix (
 
 ## 🧪 Live Demo
 Check out the live version here:  
-[calculator-shailav.vercle.app](https://calculator-shailav.vercel.app/)
+https://calculator.shailavmalik.me/
 
 <br>
 
