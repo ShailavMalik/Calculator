@@ -21,6 +21,7 @@ function highlightNumButton(key) {
   numbericButtons.forEach((button) => {
     if (button.value == key) {
       button.click();
+      button.blur();
       button.preventDefault();
     }
   });
@@ -33,7 +34,6 @@ function highlightOpButton(key) {
   else if (key == "+") document.getElementById("add").click();
   else if (key == "-") document.getElementById("sub").click();
   else if (key == "^") document.getElementById("exp").click();
-
 }
 
 document.addEventListener("keydown", (e) => {
@@ -41,8 +41,10 @@ document.addEventListener("keydown", (e) => {
   const key = e.key;
   if ((key >= 0 && key <= 9) || key == ".")
     highlightNumButton(key); // simulate key press on screen for numberic keys
-  else if (key == "Enter") document.getElementById("equalto").click();
-  else if (key == "Backspace") document.getElementById("clear").click();
+  else if (key == "Enter") {
+    e.preventDefault();
+    document.getElementById("equalto").click();
+  } else if (key == "Backspace") document.getElementById("clear").click();
   else highlightOpButton(key);
 });
 

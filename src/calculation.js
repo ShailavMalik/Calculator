@@ -24,12 +24,14 @@ function infixToPostfix(exp) {
       if (ch == " ") continue; // ignore spaces in between
 
       //* case for operand
-      if (isDigit(ch) || ch == ".") num += ch;
+      if (isDigit(ch) || ch == ".")
+        num += ch; // to handle multiple digit numbers
       else {
         if (num != "") {
+          // if num is not empty, push it to postfix
           postfix.push(num);
-          console.log(postfix);
-          num = "";
+          // console.log(postfix);
+          num = ""; // reset num
         }
 
         // ?case for '('
@@ -57,7 +59,8 @@ function infixToPostfix(exp) {
 
           // ? incoming operator has low precedance
           else if (prec(ch) <= prec(stack.at(-1))) {
-            while (isEmpty(stack) && prec(ch) <= prec(stack.at(-1))) {
+            //? check for associativity
+            while (!isEmpty(stack) && prec(ch) <= prec(stack.at(-1))) {
               postfix.push(stack.pop());
             }
             stack.push(ch);
@@ -67,10 +70,12 @@ function infixToPostfix(exp) {
     }
 
     if (num != "") {
-      postfix.push(num);
+      postfix.push(num); // if num is not empty, push it to postfix
     }
 
-    while (!isEmpty(stack)) postfix.push(stack.pop());
+    while (!isEmpty(stack)) postfix.push(stack.pop()); // pop all the remaining operators
+
+    console.log("Postfix: ", postfix);
 
     return postfix;
   } catch (error) {
